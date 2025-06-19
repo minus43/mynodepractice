@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "express-server": "^0.7.0",
+    "mongoose": "^8.16.0"
+  }
+}
