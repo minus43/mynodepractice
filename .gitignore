@@ -8,6 +8,8 @@
 # Environment files
 **/.env
 **/.env.*
+*.env
+**/configs/
 
 # Logs
 **/*.log
