@@ -1,0 +1,39 @@
+POST http://localhost:3000/file-upload
+# Content-Type 과 boundary 설정
+Content-Type: multipart/form-data; boundary=test-file-upload
+
+# 파일 매개변수 정보 시작
+--test-file-upload
+# 파일 정보 
+Content-Disposition: form-data; name="file"; filename="test.txt"
+
+# 파일의 내용
+여기에 텍스트 파일의 내용을 넣을 수 있습니다.
+# 파일 매개변수 정보 종료 
+--test-file-upload--
+
+### 실제 파일로 업로드
+POST http://localhost:3000/file-upload
+Content-Type: multipart/form-data; boundary=test-file-upload
+
+# 파일 매개변수 정보 시작
+--test-file-upload
+# 파일 정보 
+Content-Disposition: form-data; name="file"; filename="test.txt"
+
+# 텍스트 파일 지정
+< test.txt
+--test-file-upload--
+
+### 사진 업로드
+POST http://localhost:3000/file-upload
+Content-Type: multipart/form-data; boundary=test-file-upload
+
+# 파일 매개변수 정보 시작
+--test-file-upload
+# 파일 정보 
+Content-Disposition: form-data; name="file"; filename="cat.jpg"
+
+# 텍스트 파일 지정
+< cat.jpg
+--test-file-upload--
